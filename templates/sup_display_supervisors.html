@@ -1,0 +1,42 @@
+{% extends 'admin_base.html' %}
+{% block content %}
+
+<div class="content-wrapper" xmlns="http://www.w3.org/1999/html">
+              <div class="card">
+                  <div class="card-body">
+                      <h4 class="card-title">Supervisor Details</h4>
+                      <div class="table-responsive">
+                          <table class="table table-striped">
+                              <thead>
+                              <tr>
+                                  <th>No</th>
+                                  <th>Name</th>
+                                  <th>State</th>
+                                  <th>Assign To</th>
+                                  <th>Driver License</th>
+                                  <th>Action</th>
+
+                              </tr>
+                              </thead>
+                              <tbody>
+                              {% for supervisors in supervisors_data %}
+                              <tr>
+                                  <td>{{ loop.index }}</td>
+                                  <td>{{ supervisors.s_first_name }} {{ supervisors.s_last_name }}</td>
+                                  <td>{{ supervisors.s_state }}</td>
+                                  <td>{{ supervisors.s_assign_to }}</td>
+                                  <td>{{ supervisors.s_driver_license }}</td>
+                                  <td>
+                                      <a href="{{ url_for('edit_supervisor', id=supervisors.s_id) }}" class="btn btn-primary btn-sm">Edit</a>
+                                      <a href="{{ url_for('delete_supervisor', id=supervisors.s_id) }}" class="btn btn-danger btn-sm">Delete</a>
+                                  </td>
+                              </tr>
+                              {% endfor %}
+                              </tbody>
+                          </table>
+                      </div>
+                      <br>
+                      <a href="{{ url_for('admin_index') }}" class="btn btn-info btn-primary">Go Back to Home</a>
+                  </div>
+              </div>
+              {% endblock %}

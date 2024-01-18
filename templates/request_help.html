@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="col-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Help request portal</h4>
+                    <p class="card-description"> Send a message to the supervisor </p>
+                    <form class="forms-sample" method="POST" action="{{ url_for('request_help') }}" enctype="multipart/form-data">
+                      <div class="form-group">
+                        <label for="h_message">Textarea</label>
+                        <textarea class="form-control" id="h_message" name="h_message" rows="4" placeholder="Type message here"></textarea>
+                      </div>
+                      <div class="form-group">
+                        <label for="h_date">Select date</label>
+                        <input type="date" class="form-control" id="h_date" name="h_date" required>
+                      </div>
+                      <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                      <button class="btn btn-dark btn-primary">Cancel</button>
+                    &nbsp  <a href="{{ url_for('driver_index') }}"><button type="button" class="btn btn-info btn-primary mr-2">Go Back</button></a>
+                    </form>
+                  </div>
+                </div>
+              </div>
+
+
+   {% endblock %}

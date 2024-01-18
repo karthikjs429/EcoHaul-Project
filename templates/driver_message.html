@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Send message globally</h4>
+            <p class="card-description"> This message will send to everyone </p>
+            <form class="forms-sample" method="POST" action="{{ url_for('driver_message') }}" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="gm_message">Textarea</label>
+                    <textarea class="form-control" id="gm_message" name="gm_message" rows="4"
+                        placeholder="Type message here"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                <button class="btn btn-dark btn-primary">Cancel</button>
+                &nbsp <a href="{{ url_for('driver_index') }}"><button type="button"
+                        class="btn btn-info btn-primary mr-2">Go Back</button></a>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

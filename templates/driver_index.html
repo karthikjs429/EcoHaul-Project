@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% block content %}
+
+        <!-- partial -->
+
+          <div class="content-wrapper">
+            <div class="row">
+              <div class="col-md-4 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Report Address</h4>
+                    <p class="card-description">Report the address about the garbage </p>
+                    <div class="template-demo">
+                      <a href="{{ url_for('report_customer') }}"><button type="button" class="btn btn-outline-secondary btn-lg btn-block">Report</button></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Send help request</h4>
+                    <p class="card-description">Send a request message </p>
+                    <div class="template-demo">
+                      <a href="{{ url_for('request_help') }}"><button type="button" class="btn btn-outline-secondary btn-lg btn-block">Request</button></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Send global message</h4>
+                    <p class="card-description">Send a message to everyone</p>
+                    <div class="template-demo">
+                      <a href="{{ url_for('driver_message') }}"><button type="button" class="btn btn-outline-secondary btn-lg btn-block">Message</button></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">View Assignment</h4>
+                    <p class="card-description">View today's assignment</p>
+                    <div class="template-demo">
+                      <a href="{{ url_for('get_current_location') }}"><button type="button" class="btn btn-outline-secondary btn-lg btn-block">Maps</button></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Request a Leave</h4>
+                    <p class="card-description">Fill the leave Request form</p>
+                    <div class="template-demo">
+                      <a href="{{ url_for('leave_request') }}"><button type="button" class="btn btn-outline-secondary btn-lg btn-block">Request Leave</button></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+          <!-- content-wrapper ends -->
+          <!-- partial:partials/_footer.html -->
+
+          {% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'admin_base.html' %}
+{% block content %}
+
+<div class="content-wrapper">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Delete Supervisor</h4>
+            <p>Are you sure you want to delete this supervisor?</p>
+            <form method="POST" action="{{ url_for('delete_supervisor', id=supervisor_id) }}">
+                <button type="submit" class="btn btn-danger">Delete</button>
+                <a href="{{ url_for('display_supervisors') }}" class="btn btn-secondary">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends 'supervisor_base.html' %}
+{% block content %}
+
+<div class="content-wrapper">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Assignment Details</h4>
+            <form method="post" action="{{ url_for('display_supervisors') }}">
+                <div class="form-group">
+                    <label for="start_date">Start Date:</label>
+                    <input type="date" id="start_date" name="start_date" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="end_date">End Date:</label>
+                    <input type="date" id="end_date" name="end_date" class="form-control">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Filter</button>
+            </form>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Assignment ID</th>
+                            <th>Map Zone</th>
+                            <th>Loader Name</th>
+                            <th>Driver Name</th>
+                            <th>Assignment Note</th>
+                            <th>Assignment Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% if assignment_details %}
+                            {% for details in assignment_details %}
+                                <tr>
+                                    <td>{{ details.assignment_id }}</td>
+                                    <td>{{ details.map_zone }}</td>
+                                    <td>{{ details.loader_first_name }} {{ details.loader_last_name }}</td>
+                                    <td>{{ details.driver_first_name }} {{ details.driver_last_name }}</td>
+                                    <td>{{ details.assign_map_note }}</td>
+                                    <td>{{ details.assignment_date }}</td>
+                                </tr>
+                            {% endfor %}
+                        {% else %}
+                            <tr>
+                                <td colspan="6">No assignment details found</td>
+                            </tr>
+                        {% endif %}
+                    </tbody>
+                </table>
+            </div>
+            <br>
+            <a href="{{ url_for('supervisor_index') }}" class="btn btn-info btn-primary">Go Back to Home</a>
+        </div>
+    </div>
+
+{% endblock %}

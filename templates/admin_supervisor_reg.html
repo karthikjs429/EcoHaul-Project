@@ -1,0 +1,148 @@
+{% extends 'admin_base.html' %}
+{% block content %}
+
+          <div class="content-wrapper">
+              <div class="col-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Add a new supervisor to the company</h4>
+                    <form class="form-sample" method="POST">
+                      <p class="card-description"> Personal info </p>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">First Name</label>
+                            <div class="col-sm-9">
+                              <input type="text" name="s_first_name" class="form-control"  required/>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Last Name</label>
+                            <div class="col-sm-9">
+                              <input type="text" name="s_last_name" class="form-control" required />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Gender</label>
+                            <div class="col-sm-9">
+                              <select class="form-control" name="s_gender">
+                                <option>Select Option</option>
+                                <option>Male</option>
+                                <option>Female</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Date of Birth</label>
+                            <div class="col-sm-9">
+                              <input class="form-control" name="s_date_of_birth" type="date" placeholder="dd/mm/yyyy" required/>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Assign to</label>
+                            <div class="col-sm-9">
+                              <select class="form-control" name="s_assign_to">
+                                <option>Select Option</option>
+                                <option>Kitchener</option>
+                                <option>Waterloo</option>
+                                <option>Cambridge</option>
+                                <option>Elmira</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <p class="card-description"> Address </p>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Address 1</label>
+                            <div class="col-sm-9">
+                              <input type="text" class="form-control" name="s_address1" />
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">State</label>
+                            <div class="col-sm-9">
+                              <input type="text" class="form-control" name="s_state" required  />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Address 2</label>
+                            <div class="col-sm-9">
+                              <input type="text" class="form-control" name="s_address2" required/>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Postcode</label>
+                            <div class="col-sm-9">
+                              <input type="text" class="form-control" name="s_postcode" required/>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">City</label>
+                            <div class="col-sm-9">
+                              <input type="text" class="form-control" name="s_city" required/>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Driver License</label>
+                            <div class="col-sm-9">
+                              <input type="text" class="form-control" name="s_driver_license"/>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Username</label>
+                            <div class="col-sm-9">
+                              <input type="text" class="form-control" name="username" required/>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Password</label>
+                            <div class="col-sm-9">
+                              <input type="text" class="form-control" name="password"/>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                      <button class="btn btn-dark btn-primary">Cancel</button>
+                    &nbsp  <a href="{{ url_for('admin_index') }}"><button type="button" class="btn btn-info btn-primary mr-2">Go Back</button></a>
+                    </form>
+                  </div>
+                </div>
+              </div>
+
+           <script>
+</script>
+                          {% endblock %}

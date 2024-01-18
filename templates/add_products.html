@@ -1,0 +1,70 @@
+{% extends 'admin_base.html' %}
+
+{% block content %}
+  <div class="content-wrapper">
+    <div class="col-12 grid-margin stretch-card">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Add a new product for garbage collection</h4>
+          <form class="form-sample" method="POST">
+            <p class="card-description"> Product Info </p>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group row">
+                  <label class="col-sm-3 col-form-label">Product Name</label>
+                  <div class="col-sm-9">
+                    <input type="text" name="p_name" class="form-control" />
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group row">
+                  <label class="col-sm-3 col-form-label">Product Type</label>
+                  <div class="col-sm-9">
+                    <select class="form-control" name="p_type">
+                      <option>Select Option</option>
+                      <option>Garbage Bin</option>
+                      <option>Green Bin</option>
+                      <option>Recycling Bin</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group row">
+                  <label class="col-sm-3 col-form-label">Image</label>
+                  <div class="col-sm-9">
+                    <input type="file" name="p_image" class="form-control-file" />
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group row">
+                  <label class="col-sm-3 col-form-label">Price</label>
+                  <div class="col-sm-9">
+                    <input type="text" name="p_price" class="form-control" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group row">
+                  <label class="col-sm-3 col-form-label">Size (Liters)</label>
+                  <div class="col-sm-9">
+                    <input type="text" name="p_size_liters" class="form-control" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Add more product-specific fields here based on your requirements -->
+            <button type="submit" class="btn btn-primary mr-2">Submit</button>
+            <button class="btn btn-dark btn-primary">Cancel</button>
+            &nbsp; <a href="{{ url_for('admin_index') }}"><button type="button" class="btn btn-info btn-primary mr-2">Go Back</button></a>
+          </form>
+        </div>
+      </div>
+    </div>
+{% endblock %}

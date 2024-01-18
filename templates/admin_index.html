@@ -1,0 +1,102 @@
+{% extends 'admin_base.html' %}
+{% block content %}
+
+        <!-- partial -->
+
+          <div class="content-wrapper">
+            <div class="row">
+              <div class="col-md-4 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Register Supervisors</h4>
+                    <p class="card-description">Add a new supervisor to the company </p>
+                    <div class="template-demo">
+                      <a href="{{ url_for('admin_supervisor_reg') }}"><button type="button" class="btn btn-outline-secondary btn-lg btn-block">Add</button></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Register driver</h4>
+                    <p class="card-description">Add a new driver to the company </p>
+                    <div class="template-demo">
+                      <a href="{{ url_for('admin_driver_reg') }}"><button type="button" class="btn btn-outline-secondary btn-lg btn-block">Add</button></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Register Loader</h4>
+                    <p class="card-description">Add a new Loader to the company </p>
+                    <div class="template-demo">
+                      <a href="{{ url_for('admin_loader_reg') }}"><button type="button" class="btn btn-outline-secondary btn-lg btn-block">Add</button></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Register Map</h4>
+                    <p class="card-description">Add a new map for collection </p>
+                    <div class="template-demo">
+                      <a href="{{ url_for('admin_map_reg') }}"><button type="button" class="btn btn-outline-secondary btn-lg btn-block">Add</button></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Add Products</h4>
+                    <p class="card-description">Add new products to the company </p>
+                    <div class="template-demo">
+                      <a href="{{ url_for('add_products') }}"><button type="button" class="btn btn-outline-secondary btn-lg btn-block">Add</button></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">View Complaints</h4>
+                    <p class="card-description">View Complaints posted by Civilans< </p>
+                    <div class="template-demo">
+                      <a href="{{ url_for('view_complaints') }}"><button type="button" class="btn btn-outline-secondary btn-lg btn-block">Add</button></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Customer feedback form </h4>
+                    <p class="card-description">Customer feedback form  </p>
+                    <div class="template-demo">
+                      <a href="{{ url_for('customer_feedback') }}"><button type="button" class="btn btn-outline-secondary btn-lg btn-block">Add</button></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">paycheck calculator</h4>
+                    <p class="card-description">Add new products to the company </p>
+                    <div class="template-demo">
+                      <a href="{{ url_for('payroll_calculator') }}"><button type="button" class="btn btn-outline-secondary btn-lg btn-block">Add</button></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+          <!-- content-wrapper ends -->
+          <!-- partial:partials/_footer.html -->
+
+          {% endblock %}

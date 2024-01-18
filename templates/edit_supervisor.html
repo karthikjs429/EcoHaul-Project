@@ -1,0 +1,69 @@
+{% extends 'admin_base.html' %}
+{% block content %}
+
+<div class="content-wrapper">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Edit Supervisor</h4>
+            <form method="POST" action="{{ url_for('edit_supervisor', id=supervisor_id) }}">
+                <div class="form-group">
+                    <label for="s_first_name">First Name</label>
+                    <input type="text" class="form-control" id="s_first_name" name="s_first_name" value="{{ supervisor.s_first_name }}">
+                </div>
+                <div class="form-group">
+                    <label for="s_last_name">Last Name</label>
+                    <input type="text" class="form-control" id="s_last_name" name="s_last_name" value="{{ supervisor.s_last_name }}">
+                </div>
+                <div class="form-group">
+                    <label for="s_gender">Gender</label>
+                    <select class="form-control" id="s_gender" name="s_gender">
+                        <option {% if supervisor.s_gender == 'Male' %}selected{% endif %}>Male</option>
+                        <option {% if supervisor.s_gender == 'Female' %}selected{% endif %}>Female</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="s_date_of_birth">Date of Birth</label>
+                    <input type="date" class="form-control" id="s_date_of_birth" name="s_date_of_birth" value="{{ supervisor.s_date_of_birth }}">
+                </div>
+                <div class="form-group">
+                    <label for="s_assign_to">Assign to</label>
+                    <select class="form-control" id="s_assign_to" name="s_assign_to">
+                        <option {% if supervisor.s_assign_to == 'Kitchener' %}selected{% endif %}>Kitchener</option>
+                        <option {% if supervisor.s_assign_to == 'Waterloo' %}selected{% endif %}>Waterloo</option>
+                        <option {% if supervisor.s_assign_to == 'Cambridge' %}selected{% endif %}>Cambridge</option>
+                        <option {% if supervisor.s_assign_to == 'Elmira' %}selected{% endif %}>Elmira</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="s_address1">Address 1</label>
+                    <input type="text" class="form-control" id="s_address1" name="s_address1" value="{{ supervisor.s_address1 }}">
+                </div>
+                <div class="form-group">
+                    <label for="s_state">State</label>
+                    <input type="text" class="form-control" id="s_state" name="s_state" value="{{ supervisor.s_state }}">
+                </div>
+                <div class="form-group">
+                    <label for="s_address2">Address 2</label>
+                    <input type="text" class="form-control" id="s_address2" name="s_address2" value="{{ supervisor.s_address2 }}">
+                </div>
+                <div class="form-group">
+                    <label for="s_postcode">Postcode</label>
+                    <input type="text" class="form-control" id="s_postcode" name="s_postcode" value="{{ supervisor.s_postcode }}">
+                </div>
+                <div class="form-group">
+                    <label for="s_city">City</label>
+                    <input type="text" class="form-control" id="s_city" name="s_city" value="{{ supervisor.s_city }}">
+                </div>
+                <div class="form-group">
+                    <label for="s_driver_license">Driver License</label>
+                    <input type="text" class="form-control" id="s_driver_license" name="s_driver_license" value="{{ supervisor.s_driver_license }}">
+                </div>
+                <button type="submit" class="btn btn-primary">Save Changes</button> &nbsp
+                <a href="{{ url_for('display_supervisors') }}" class="btn btn-secondary">Cancel</a> &nbsp
+                <a href="{{ url_for('admin_index') }}" class="btn btn-info btn-primary">Go Back to Home</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

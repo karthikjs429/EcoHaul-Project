@@ -1,0 +1,18 @@
+{% extends 'admin_base.html' %}
+
+{% block content %}
+
+<body>
+    <h1>Payroll Calculator</h1>
+    <form method="post" action="{{ url_for('payroll_calculator') }}">
+        <label for="hours_worked">Hours Worked:</label>
+        <input type="number" id="hours_worked" name="hours_worked" required><br>
+        <label for="user_role">Employee Role:</label>
+        <select id="user_role" name="user_role" required>
+            <option value="supervisor">Supervisor</option>
+            <option value="driver">Driver</option>
+              <option value="loader">Loader</option>
+        </select><br>
+        <button type="submit">Calculate</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="content-wrapper" xmlns="http://www.w3.org/1999/html">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Leave Status</h4>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Name</th>
+                        <th>Reason</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                        <th>Submission Date</th>
+                        <th>Status</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for leave_request in leave_requests_data %}
+                        <tr>
+                            <td>{{ loop.index }}</td>
+                            <td>{{ leave_request.d_first_name }} {{ leave_request.d_last_name }}</td>
+                            <td>{{ leave_request.leave_message }}</td>
+                            <td>{{ leave_request.leave_start_date }}</td>
+                            <td>{{ leave_request.leave_end_date }}</td>
+                            <td>{{ leave_request.submitted_at }}</td>
+                            <td>{{ leave_request.status }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

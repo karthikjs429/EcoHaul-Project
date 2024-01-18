@@ -1,0 +1,78 @@
+{% extends 'supervisor_base.html' %}
+
+{% block content %}
+
+<div class="content-wrapper">
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Assign map</h4>
+                <form class="form-sample" method="POST" action="{{ url_for('supervisor_assign_map') }}">
+                    <p class="card-description"> Assign map to the driver and loader </p>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Select map</label>
+                                <div class="col-sm-9">
+                                    <select class="form-control" name="map_id">
+                                        <option value="">Select Map</option>
+                                             {% for map in maps %}
+                                        <option value="{{ map.map_id }}">{{ map.map_zone }}</option>
+                                              {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Select driver</label>
+                                <div class="col-sm-9">
+                                    <select class="form-control" name="d_assign_to_driver">
+                                        <option value="">Select Driver</option>
+                                        {% for driver in drivers %}
+                                            <option value="{{ driver.d_id }}">{{ driver.d_first_name }} {{ driver.d_last_name }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Select loader</label>
+                                <div class="col-sm-9">
+                                    <select class="form-control" name="d_assign_to_loader">
+                                        <option value="">Select Loader</option>
+                                        {% for loader in loaders %}
+                                            <option value="{{ loader.l_id }}">{{ loader.l_first_name }} {{ loader.l_last_name }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Add Notes</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="assign_map_note" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                    <button class="btn btn-dark btn-primary">Cancel</button>
+                    &nbsp  <a href="{{ url_for('admin_index') }}"><button type="button" class="btn btn-info btn-primary mr-2">Go Back</button></a>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

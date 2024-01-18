@@ -1,0 +1,17 @@
+{% extends 'admin_base.html' %}
+{% block content %}
+
+<div class="content-wrapper">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Confirm Delete</h4>
+            <p>Are you sure you want to delete the product '{{ product_data.p_name }}'? This action cannot be undone.</p>
+            <form method="POST" action="{{ url_for('delete_product', id=p_id) }}">
+                <button type="submit" class="btn btn-danger">Confirm Delete</button>
+            </form>
+            <a href="{{ url_for('display_products') }}" class="btn btn-info btn-primary">Cancel</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

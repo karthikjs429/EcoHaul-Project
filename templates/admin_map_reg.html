@@ -1,0 +1,41 @@
+{% extends 'admin_base.html' %}
+{% block content %}
+
+<div class="content-wrapper">
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Add a new map to the company</h4>
+                <form class="form-sample" method="POST" enctype="multipart/form-data">
+                    <p class="card-description"> Map info </p>
+                    <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Zone Number</label>
+                            <div class="col-sm-9">
+                              <input type="text" name="map_zone" class="form-control" />
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Map Picture</label>
+                                <div class="col-sm-9">
+                                    <input type="file" name="map_picture" class="form-control-file" accept="image/*" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Existing address fields -->
+
+                    <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                    <button class="btn btn-dark btn-primary">Cancel</button>
+                    &nbsp; <a href="{{ url_for('admin_index') }}"><button type="button"
+                            class="btn btn-info btn-primary mr-2">Go Back</button></a>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

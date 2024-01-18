@@ -1,0 +1,56 @@
+{% extends 'admin_base.html' %}
+{% block content %}
+
+<div class="content-wrapper">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Edit Loader</h4>
+            <form method="POST" action="{{ url_for('edit_loader', id=loader_id) }}">
+                <div class="form-group">
+                    <label for="l_first_name">First Name</label>
+                    <input type="text" class="form-control" id="l_first_name" name="l_first_name" value="{{ loader.l_first_name }}">
+                </div>
+                <div class="form-group">
+                    <label for="l_last_name">Last Name</label>
+                    <input type="text" class="form-control" id="l_last_name" name="l_last_name" value="{{ loader.l_last_name }}">
+                </div>
+                <div class="form-group">
+                    <label for="l_email">Email</label>
+                    <input type="email" class="form-control" id="l_email" name="l_email" value="{{ loader.l_email }}">
+                </div>
+                <div class="form-group">
+                    <label for="l_gender">Gender</label>
+                    <select class="form-control" id="l_gender" name="l_gender">
+                        <option {% if loader.l_gender == 'Male' %}selected{% endif %}>Male</option>
+                        <option {% if loader.l_gender == 'Female' %}selected{% endif %}>Female</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="l_date_of_birth">Date of Birth</label>
+                    <input type="date" class="form-control" id="l_date_of_birth" name="l_date_of_birth" value="{{ loader.l_date_of_birth }}">
+                </div>
+                <div class="form-group">
+                    <label for="l_address">Address</label>
+                    <input type="text" class="form-control" id="l_address" name="l_address" value="{{ loader.l_address }}">
+                </div>
+                <div class="form-group">
+                    <label for="l_state">State</label>
+                    <input type="text" class="form-control" id="l_state" name="l_state" value="{{ loader.l_state }}">
+                </div>
+                <div class="form-group">
+                    <label for="l_postcode">Postcode</label>
+                    <input type="text" class="form-control" id="l_postcode" name="l_postcode" value="{{ loader.l_postcode }}">
+                </div>
+                <div class="form-group">
+                    <label for="l_city">City</label>
+                    <input type="text" class="form-control" id="l_city" name="l_city" value="{{ loader.l_city }}">
+                </div>
+                <button type="submit" class="btn btn-primary">Save Changes</button> &nbsp
+                <a href="{{ url_for('display_loader') }}" class="btn btn-secondary">Cancel</a> &nbsp
+                <a href="{{ url_for('admin_index') }}" class="btn btn-info btn-primary">Go Back to Home</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

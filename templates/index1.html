@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaint Reports</title>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>House Number</th>
+            <th>Street</th>
+            <th>City</th>
+            <th>Action</th>
+            <th>Date</th>
+            <th>Filename</th>
+            <th>Description</th>
+        </tr>
+        {% for result in results %}
+        <tr>
+            <td>{{ result.co_id }}</td>
+            <td>{{ result.co_house_no }}</td>
+            <td>{{ result.co_street }}</td>
+            <td>{{ result.co_city }}</td>
+            <td>{{ result.co_action }}</td>
+            <td>{{ result.co_date }}</td>
+            <td>{{ result.co_filename }}</td>
+            <td>{{ result.co_desc }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

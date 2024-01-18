@@ -1,0 +1,17 @@
+{% extends 'admin_base.html' %}
+
+{% block content %}
+
+
+    <h1>Explore and Resolve Complaints</h1>
+<br>
+    <ul>
+        {% for complaint in complaints %}
+        <br>
+            <li>{{ complaint.c_desc }}</li>
+        {% endfor %}
+    </ul>
+
+
+
+{% endblock %}

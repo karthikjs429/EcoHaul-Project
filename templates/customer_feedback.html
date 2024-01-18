@@ -1,0 +1,34 @@
+{% extends 'admin_base.html' %}
+{% block content %}
+
+
+<body>
+
+<h2>Customer Feedback Form</h2>
+
+<form action="/customer_feedback" method="post">
+    <label for="customerName">Customer Name:</label>
+    <input type="text" id="customerName" name="customerName" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone" required>
+
+    <label for="feedbackType">Feedback Type:</label>
+    <select id="feedbackType" name="feedbackType" required>
+        <option value="compliment">Compliment</option>
+        <option value="suggestion">Suggestion</option>
+        <option value="issue">Issue</option>
+        <option value="other">Other</option>
+    </select>
+
+    <label for="feedback">Feedback:</label>
+    <textarea id="feedback" name="feedback" rows="4" required></textarea>
+
+    <button type="submit">Submit Feedback</button>
+</form>
+
+</body>
+{% endblock %}

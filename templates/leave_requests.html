@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="content-wrapper" xmlns="http://www.w3.org/1999/html">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Leave Requests</h4>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Driver Name</th>
+                        <th>Reason</th>
+                        <th>From</th>
+                        <th>To</th>
+                        <th>Submission Date</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for leave_request in leave_requests_data %}
+                        <tr>
+                            <td>{{ loop.index }}</td>
+                            <td>{{ leave_request.d_first_name }} {{ leave_request.d_last_name }}</td>
+                            <td>{{ leave_request.leave_message }}</td>
+                            <td>{{ leave_request.leave_start_date }}</td>
+                            <td>{{ leave_request.leave_end_date }}</td>
+                            <td>{{ leave_request.submitted_at }}</td>
+                            <td>{{ leave_request.status }}</td>
+                            <td>
+                              <a href="{{ url_for('approve_leave', leave_id=leave_request.leave_id) }}" class="btn btn-primary btn-sm">Approve</a>
+                              <a href="{{ url_for('delete_leave', leave_id=leave_request.leave_id) }}" class="btn btn-danger btn-sm">Delete</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'supervisor_base.html' %}
+{% block content %}
+
+<div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Striped Table</h4>
+                    <p class="card-description"> Add class <code>.table-striped</code>
+                    </p>
+                    <div class="table-responsive">
+                      <table class="table table-striped">
+                        <thead>
+                          <tr>
+                            <th> First name </th>
+                            <th> Last name </th>
+                            <th> Progress </th>
+                            <th> Amount Earned (YTD) </th>
+                            <th> Working hours </th>
+                            <th> License No </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td> {{ supervisor_detail.s_first_name }} </td>
+                            <td> {{ supervisor_detail.s_last_name }} </td>
+                            <td>
+                              <div class="progress">
+                                <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                            </td>
+                            <td> {{ supervisor_detail.s_address1 }} </td>
+                            <td> $ 77.99 </td>
+                            <td> {{ supervisor_detail.s_driver_license }} </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'admin_base.html' %}
+{% block content %}
+
+<div class="content-wrapper">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Product Details</h4>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Image</th>
+                        <th>Price</th>
+                        <th>Size (Liters)</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for product in products_data %}
+                        <tr>
+                            <td>{{ loop.index }}</td>
+                            <td>{{ product.p_name }}</td>
+                            <td>{{ product.p_type }}</td>
+                            <td>
+                                {% if product.p_image %}
+                                    <img src="{{ url_for('static', filename='uploads/' + product.p_image) }}" alt="Product Image" style="max-width: 100px; max-height: 100px;">
+                                {% else %}
+                                    No Image
+                                {% endif %}
+                            </td>
+                            <td>{{ product.p_price }} $</td>
+                            <td>{{ product.p_size_liters }} L</td>
+                            <td>
+                                <a href="{{ url_for('delete_product', id=product.p_id) }}" class="btn btn-danger btn-sm">Delete</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <br>
+            <a href="{{ url_for('admin_index') }}" class="btn btn-info btn-primary">Go Back to Home</a>
+        </div>
+    </div>
+{% endblock %}

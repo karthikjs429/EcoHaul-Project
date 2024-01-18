@@ -1,0 +1,70 @@
+{% extends 'supervisor_base.html' %}
+{% block content %}
+
+        <!-- partial -->
+
+          <div class="content-wrapper">
+            <div class="row">
+
+              <div class="col-md-4 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Assign a map </h4>
+                    <p class="card-description">Assign a map to the driver </p>
+                    <div class="template-demo">
+                      <a href="{{ url_for('supervisor_assign_map') }}"><button type="button" class="btn btn-outline-secondary btn-lg btn-block">Assign</button></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">View Assigned map </h4>
+                    <p class="card-description"></p>
+                    <div class="template-demo">
+                      <a href="{{ url_for('view_assignment_details') }}"><button type="button" class="btn btn-outline-secondary btn-lg btn-block">Assign</button></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">leave requests </h4>
+                    <p class="card-description">View the leave requests </p>
+                    <div class="template-demo">
+                      <a href="{{ url_for('leave_requests') }}"><button type="button" class="btn btn-outline-secondary btn-lg btn-block">View</button></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Send a global message </h4>
+                    <p class="card-description">Send messages to everyone </p>
+                    <div class="template-demo">
+                      <a href="{{ url_for('supervisor_message') }}"><button type="button" class="btn btn-outline-secondary btn-lg btn-block">Send</button></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">view Complaint </h4>
+                    <p class="card-description"> </p>
+                    <div class="template-demo">
+                      <a href="{{ url_for('supervisor_message') }}"><button type="button" class="btn btn-outline-secondary btn-lg btn-block">Send</button></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+          <!-- content-wrapper ends -->
+          <!-- partial:partials/_footer.html -->
+
+          {% endblock %}
